@@ -7,18 +7,18 @@ pipeline {
     environment {
         MAIN_DIR = ''
     }
-
-    stage('Develop Branch <server dev>') {
-        when {
-            branch 'develop'
-        }
-        steps {
-            ansiColor('xterm') {
-                echo '<<< start develop >>>'
+    stages {
+        stage('Develop Branch <server dev>') {
+            when {
+                branch 'develop'
+            }
+            steps {
+                ansiColor('xterm') {
+                    echo '<<< start develop >>>'
+                }
             }
         }
-    }
-    /*stage('Master Branch <server prd>') {
+        /*stage('Master Branch <server prd>') {
         when {
             branch 'master'
         }
@@ -28,4 +28,5 @@ pipeline {
             }
         }
     }*/
+    }
 }
