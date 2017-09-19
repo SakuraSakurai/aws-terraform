@@ -3,7 +3,7 @@ terraform {
   backend "s3" {
     region = "ap-northeast-1"
     # this "key" has no effect because of using state environments
-    # key = "terraform"
+    key = "terraform"
   }
 }
 
