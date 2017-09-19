@@ -15,9 +15,9 @@ pipeline {
             steps {
                 ansiColor('xterm') {
                     echo '<<< start develop >>>'
-                    sh '/usr/local/bin/terraform init -backend-config "bucket=prd-terraform-ss"'
-                    sh '/usr/local/bin/terraform env select prd'
-                    sh '/usr/local/bin/terraform plan -var-file=/etc/terraform/prd/credentials.tfvars'
+                    sh '/usr/bin/terraform init -backend-config "bucket=prd-terraform-ss"'
+                    sh '/usr/bin/terraform env select prd'
+                    sh '/usr/bin/terraform plan -var-file=/etc/terraform/prd/credentials.tfvars'
                 }
             }
         }
