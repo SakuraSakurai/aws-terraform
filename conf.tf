@@ -1,5 +1,5 @@
 terraform {
-  required_version = "~> 0.9.0"
+  required_version = "~> 0.10.5"
   backend "s3" {
     region = "ap-northeast-1"
     # this "key" has no effect because of using state environments
