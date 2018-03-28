@@ -1,4 +1,5 @@
 resource "aws_elb" "elb_ss" {
+  count="${var.count}"
   name = "${terraform.env}-elb-ss"
 
   subnets = [

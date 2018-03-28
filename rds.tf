@@ -1,4 +1,5 @@
 resource "aws_db_instance" "rds_ss" {
+  count="${var.count}"
   identifier = "${terraform.env}-rds-ss"
   allocated_storage = 5
   engine = "postgres"
@@ -20,6 +21,7 @@ output "rds_endpoint" {
 
 
 resource "aws_db_subnet_group" "rds_ss" {
+  count="${var.count}"
   name = "${terraform.env}-rds-ss"
   description = "rds subnet group for ss"
   subnet_ids = ["${data.aws_subnet.subnet-ss-a.id}","${data.aws_subnet.subnet-ss-c.id}"]

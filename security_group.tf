@@ -1,4 +1,5 @@
 resource "aws_security_group" "sg_ss_app" {
+  count="${var.count}"
   name = "${terraform.env}-ss-app"
   vpc_id = "${data.aws_vpc.vpc-ss.id}"
   description = "for SS Network"

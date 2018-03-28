@@ -1,4 +1,5 @@
 resource "aws_instance" "ss_instance" {
+  count="${var.count}"
   # ECS-optimized AMI for us-east-1
   ami = "ami-4af5022c"
   subnet_id = "${data.aws_subnet.subnet-ss-a.id}"
